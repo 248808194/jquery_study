@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<input id="i1" type="text">
+<input id="i2" type="button" value="添加">
+<input id="i3" type="button" value="删除">
+<input id="i4" type="button" value="复制">
+
+
+<ul id="u1">
+
+</ul>
+<script src="jquery-1.12.4.js"></script>
+
+<script> //添加
+    $('#i2').click(function () {
+        var text = $('#i1').val();
+        console.log(text);
+
+        if (text.length  > 0) {
+            $('#u1').append( '<li>' + text + '</li>' ); // 最后追加
+//            $('#u1').prepend( '<li>' + text + '</li>' ); // 最前追加
+//            $('#u1').after( '<li>' + text + '</li>' ); //同级别上面
+//            $('#u1').before( '<li>' + text + '</li>' ) //同级别下面
+        }
+
+
+    })
+</script>
+
+<script > //删除
+    $('#i3').click(function () {
+        var index_value = $('#i1').val();
+        $('#u1 li').eq(index_value).remove(); //清空整个标签，包括标签本身
+//        $('#u1 li').eq(index_value).empty(); //只清空标签的内容，但保留标签
+
+    })
+
+</script>
+
+
+<script > // 复制
+    $('#i4').click(function () {
+        var index_value = $('#i1').val();
+        var clone_li = $('#u1 li').eq(index_value).clone();
+        $('#u1').append(clone_li)
+    })
+
+</script>
+</body>
+</html>

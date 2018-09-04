@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+<script src="jquery-1.12.4.js"></script>
+</head>
+<style>
+    .hide {
+        display: none;
+    }
+    .kaiguan {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: black;
+
+        z-index: 10;
+    }
+    .in {
+position: relative;
+z-index: 11;
+    }
+        .in1 {
+position: relative;
+z-index: 11;
+    }
+</style>
+
+<body>
+
+<input class="in" type="button" value="开关">
+<input class="in1" type="button" value="开关">
+
+<div class="kaiguan"></div>
+
+<script>
+    $('.in').click(function () {
+        if ( $('.kaiguan').hasClass('hide')) {
+             $('.kaiguan').removeClass('hide')
+
+        }
+        else {
+             $('.kaiguan').addClass('hide')
+        }
+    });
+
+
+    $('.in1').click(function () {
+        $('.kaiguan').toggleClass('hide') //实现了上面同样的效果
+
+    })
+
+</script>
+
+
+</body>
+</html>

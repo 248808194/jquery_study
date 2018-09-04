@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<style>
+    .c1 {
+        border: 1px solid black;
+        padding: 50px 0;
+
+    }
+
+    .c2 {
+        width: 20px;
+        position: relative;
+        cursor: pointer;
+    }
+
+</style>
+<body>
+<div class="c1">
+    <div class="c2">
+        <span>赞</span>
+    </div>
+</div>
+
+<script src="jquery-1.12.4.js"></script>
+
+<script>
+    $('.c2').click(function () {
+        addfaver(this);
+
+    })
+
+    function addfaver(self) {
+        var fontSize = 15;
+        var top = 0;
+        var right = 0;
+        var opacity = 1;
+        var tag = document.createElement('span');
+        $(tag).text('+1');
+        $(tag).css('color', 'green');
+        $(tag).css('position', 'absolute');
+        $(tag).css('fontSize', fontSize + 'px');
+        $(tag).css('right', right + 'px');
+        $(tag).css('top', top + 'px');
+        $(tag).css('opacity', opacity);
+        console.log(tag);
+        $(self).append(tag);
+
+        obj = setInterval(function () {
+            fontSize = fontSize + 5;
+            top = top - 10;
+            right = right - 10;
+            opacity = opacity - 0.1;
+            $(tag).css('fontSize', fontSize + 'px');
+            $(tag).css('right', right + 'px');
+            $(tag).css('top', top + 'px');
+            $(tag).css('opacity', opacity);
+            if ( opacity < 0 ) {
+                clearInterval(obj);
+            }
+        },100)
+
+    }
+</script>
+
+</body>
+</html>

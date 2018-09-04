@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="9.html" method="post">
+<input type="text">
+<input type="password" value="密码">
+
+<input type="submit" value="提交">
+
+    </form>
+<script src="jquery-1.12.4.js"></script>
+
+<script>
+
+    $('input:submit').click(function () {
+        $(this).parent().find('input[type="text"]', 'input[type="password"]').each(function () {
+            console.log(123);
+
+        })
+
+
+    })
+
+
+</script>
+</body>
+</html>

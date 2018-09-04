@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $.extend({
+        'zhoutao': function () {
+            return 'db';
+        }
+    });
+
+    $.fn.extend({ //这种写法需要这样来调用 $('i1').zhoutao()
+        'zhoutao': function () {
+            return 'db';
+        }
+    })
+
+</script>
+
+
+
+<script>
+    var v = $.zhoutao();
+    alert(v);
+
+
+
+
+    js扩展文件写法
+
+    (function (arg) {
+        var status = 1;
+        arg.extend(
+            "zhoutao":function() {
+                return 'asdf';
+
+        }
+        )
+
+    })(jQuery)
+
+</script>
+</body>
+</html>

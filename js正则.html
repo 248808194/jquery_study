@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+
+test #判断字符串是否否和规定的正则
+exec #获取匹配的字符串
+js中正则表达式为 /\d+/
+var src = /d+/ -> 只要包含数字就是真
+undefined
+src.test('12a3')
+false
+var src = /\d+/
+undefined
+src.test('12a3')
+true
+
+var src = /^\d+$/ #从开头到结尾都是数字则为真
+undefined
+src.te
+undefined
+src.test('123')
+true
+src.test('123a')
+false
+src.test('12a3')
+false
+
+、、、、、、、、
+strs = "zhoutao123 zhoutaoasdf"
+rep = /\bzhoutao(\d+)\b/ #分组匹配，先匹配 zhoutao后面包含了数字，在在这个结果中在匹配是否有数字
+输出结果  ["zhoutao123", "123"】
+
+
+aaa.exec(text)
+["JavaScript", index: 0, input: "JavaScript is more fun than ↵JavaEE or JavaBeans!", groups: undefined]
+var aaa = /Java\w+/g
+undefined
+aaa.exec(text)
+["JavaScript", index: 0, input: "JavaScript is more fun than ↵JavaEE or JavaBeans!", groups: undefined]
+aaa.exec(text)
+["JavaEE", index: 29, input: "JavaScript is more fun than ↵JavaEE or JavaBeans!", groups: undefined]
+aaa.exec(text)
+["JavaBeans", index: 39, input: "JavaScript is more fun than ↵JavaEE or JavaBeans!", groups: undefined]
+aaa.exec(text)
+null
+aaa.exec(text)
+["JavaScript", index: 0, input: "JavaScript is more fun than ↵JavaEE or JavaBeans!", groups: undefined]
+var aaa = /Java(\w+)/g
+undefined
+aaa.exec(text)
+(2) ["JavaScript", "Script", index: 0, input: "JavaScript is more fun than ↵JavaEE or JavaBeans!", groups: undefined]
+aaa.exec(text)
+(2) ["JavaEE", "EE", index: 29, input: "JavaScript is more fun than ↵JavaEE or JavaBeans!", groups: undefined]
+aaa.exec(text)
+(2) ["JavaBeans", "Beans", index: 39, input: "JavaScript is more fun than ↵JavaEE or JavaBeans!", groups: undefined]
+-->
+
+
+</body>
+</html>
+

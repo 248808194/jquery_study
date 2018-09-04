@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="jquery-1.12.4.js"></script>
+<style>
+    .c1 {
+        border: 1px solid black;
+        padding: 50px 0;
+
+    }
+
+    .c2 {
+        width: 20px;
+        position: relative;
+        cursor: pointer;
+    }
+
+</style>
+<body>
+
+
+<div class="c1">
+    <div class="c2">
+        <span>赞</span>
+    </div>
+</div>
+
+<div class="c1">
+    <div class="c2">
+        <span>赞</span>
+    </div>
+</div>
+
+<div class="c1">
+    <div class="c2">
+        <span>赞</span>
+    </div>
+</div>
+
+<script>
+    $('.c2').click(function () {
+        ADDFavor(this); //该标签点击的时候创建匿名函数,并执行ADDfavor这个函数将自己当做形式参数传递进去
+    });
+
+    function ADDFavor(self) {
+
+        // 设置一些变量
+        var fontSize = 15;
+        var top = 0;
+        var right = 0;
+        var opacity = 1;
+
+
+        var tag = document.createElement('span'); //创建一个标签
+
+        //定义标签的一些样式
+        $(tag).text('+1');
+        $(tag).css('color', 'green');
+        $(tag).css('position', 'absolute');
+        $(tag).css('fontSize', fontSize + 'px');
+        $(tag).css('right', right + 'px');
+        $(tag).css('top', top + 'px');
+        $(tag).css('opacity', opacity);
+        console.log(tag);
+
+        //将标签添加到这个标签中
+        $(self).append(tag);
+
+        var obj = setInterval(function () {
+
+            //每隔1000ms执行下面的内容修改新加标签的样式,直到透明度小于0时候清楚定时器.
+            fontSize = fontSize + 5;
+            top = top - 10;
+            right = right - 10;
+            opacity = opacity - 0.1;
+            $(tag).css('fontSize', fontSize + 'px');
+            $(tag).css('right', right + 'px');
+            $(tag).css('top', top + 'px');
+            $(tag).css('opacity', opacity);
+
+            if (opacity < 0) {
+                console.log(123);
+                clearInterval(obj);
+            }
+
+        }, 100);
+
+
+    }
+
+
+</script>
+</body>
+</html>

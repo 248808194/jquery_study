@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.4.js"></script>
+</head>
+<style>
+    .pg-header {
+        height: 48px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: aqua;
+    }
+
+    .pg-header .menu {
+        background-color: chocolate;
+        float: left;
+        width: 300px;
+        height: 48px;
+        text-align: center;
+        line-height: 48px;
+    }
+
+    .pg-content {
+        position: absolute;
+        top: 48px;
+        background-color: cornflowerblue;
+        width: 300px;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+
+    }
+
+    .nr {
+        background-color: coral;
+    }
+
+    .hide {
+        display: none;
+    }
+
+</style>
+
+<body>
+
+<div class="pg-header">
+    <div class="menu">菜单
+    </div>
+
+</div>
+<div class="pg-content">
+    <div class="menu">
+        <div class="bt">标题1
+            <div class="hide">
+            <div class="nr">内容11</div>
+            <div class="nr">内容1</div>
+            <div class="nr1">内容1</div>
+            <div class="nr">内容1</div>
+            <div class="nr">内容1</div>
+                </div>
+            </div>
+        <div class="bt">标题2
+              <div class="hide">
+            <div class="nr">内容12</div>
+            <div class="nr">内容2</div>
+            <div class="nr">内容2</div>
+            <div class="nr">内容2</div>
+            <div class="nr">内容2</div>
+                                  </div>
+            </div>
+        <div class="bt">标题3
+              <div class="hide">
+            <div class="nr">内容13</div>
+            <div class="nr">内容3</div>
+            <div class="nr">内容3</div>
+            <div class="nr">内容3</div>
+            <div class="nr">内容3</div>
+                        </div>
+            </div>
+
+    </div>
+
+</div>
+<div class="pg-footer"></div>
+
+<script>
+//    $(this).next(); 下一个
+//    $(this).prev(); 上一个
+//    $(this).parent(); 父
+//    $(this).children();所有孩子
+//    $(this).siblings(); 兄弟
+//    $('#i1').find('.nr'); 子子孙孙中查找
+// eq
+//first
+//last
+//hasClass
+
+    $('.bt').click(function(){
+        $(this).children().removeClass('hide');
+        $($(this).children().find('.nr')[0]).addClass('hide');
+
+
+        $($(this).children().find('.nr')[0]).addClass('hide');
+        $(this).children().find('.nr').eq(1).addClass('hide');
+        $(this).children().find('.nr:eq(2)').addClass('hide');
+
+        $(this).siblings().children().addClass('hide');
+
+        //链式编程写法
+
+
+    })
+</script>
+
+
+</body>
+</html>

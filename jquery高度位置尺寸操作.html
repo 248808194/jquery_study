@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            position: fixed;
+            top: 10px;
+        }
+
+    </style>
+</head>
+<body style="height: 100px">
+<script src="jquery-1.12.4.js"></script>
+<input type="button" value="田">
+<div style="overflow: auto;height: 100px;width: 100px">
+    <p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+    <p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+    <p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+    <p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+    <p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+    <p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+
+123</div>
+
+  <div  id="element" style="margin:5px; padding:10px; width:100px; height:100px; border:1px solid #000;background-color: black"></div>
+
+<script>
+    $('input').click(function () {
+    console.log($(window).scrollTop()); //窗口的高度,浏览器滚动条的高度
+    console.log($('div').scrollTop()); // 这个div当前所在的高度
+
+    // offset 指定标签在html中的坐标
+    console.log($('div').offset());
+    console.log($('div').offset().left);
+    console.log($('div').offset().right);
+    console.log($('div').offset().top);
+    console.log($('div').offset().bottom);
+
+    //高度
+        console.log('高度');
+    console.log($('#element').height()); //  height(100) = 100
+    console.log($('#element').innerHeight());  // height(100) + padding(10*2)= 120
+    console.log($('#element').outerHeight()); // height(100) + padding(10*2) + border(1*2) = 122
+    console.log($('#element').outerHeight(true)); // height(100) + padding(10*2) + border(1*2) + margin(5*2) = 132
+
+    });
+
+
+
+</script>
+
+</body>
+</html>

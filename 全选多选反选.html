@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.4.js"></script>
+</head>
+<body>
+
+<input type="button" value="全选" onclick="choseall()">
+<input type="button" value="反选" onclick="revoseall()">
+<input type="button" value="取消" onclick="cacelall()">
+
+<table border="1px " id="c1">
+    <thead>
+    <tr>
+        <th>选择</th>
+        <th>主机名</th>
+        <th>ip</th>
+        <th>端口</th>
+    </tr>
+    </thead>
+
+
+    <tbody>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>web</td>
+        <td>1.1.1.1</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>web1</td>
+        <td>1.1.1.2</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>web2</td>
+        <td>1.1.1.2</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>web3</td>
+        <td>1.1.1.2</td>
+        <td>22</td>
+    </tr>
+    </tbody>
+</table>
+
+
+<script>
+    function choseall() {
+        $('#c1 input:checkbox').prop('checked', true)
+
+    }
+
+    function cacelall() {
+        $('#c1 input:checkbox').prop('checked', false)
+
+    }
+
+    //method 1
+    function revoseall() {
+        $('#c1 input:checkbox').each(function () {
+            console.log(this);
+            if (this.checked) {
+                this.checked = false
+            }
+            else {
+                this.checked = true
+            }
+
+
+        });
+
+
+   //method 2  jquery
+
+        function revoseall() {
+        $('#c1 input:checkbox').each(function () {
+            if ($(this).prop('checked')) {
+                $(this).prop('checked',false)
+            }
+            else {
+                $(this).prop('checked',true)
+            }
+
+        })
+        //.each循环选中check里面所有的元素
+        // this 指当前循环的元素
+
+    //method 3 三元运算
+
+
+        function revoseall() {
+        $('#c1 input:checkbox').each(function () {
+
+        var  v = $(this).prop('checked')?false:true; //三元运算，如果checked为真则v的值设置为false 否则就设置为true
+            $(this).prop('checked',v)
+
+        })
+
+    }
+</script>
+</body>
+</html>
